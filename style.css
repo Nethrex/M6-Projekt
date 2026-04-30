@@ -1,15 +1,99 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f0f0f0;
+/* =========================================
+   OVERORDNET SIDELAYOUT (style.css)
+   ========================================= */
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background-color: #f4f7f6; 
+    margin: 0; 
+    padding: 0; 
 }
 
-h1 {
-    color: #00cb47;
-    text-align: center;
+/* Topbar / Header */
+.site-header {
+    background-color: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 15px 40px;
 }
 
-p {
-    color: #4006ef;
-    line-height: 1.6;
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Kasse */
+.site-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Styrer selve billedets størrelse */
+.site-logo img {
+    max-height: 50px; /* Sørger for at logoet ikke sprænger menuens højde */
+    width: auto;      /* Bevarer billedets proportioner */
+    display: block;
+}
+
+/* Fælles kasse der holder logo og titel på linje */
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Bestemmer afstanden mellem logoet og titlen */
+}
+
+/* Styling af selve titlen */
+.site-title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #1e293b; /* En mørk, pæn overskriftsfarve */
+    letter-spacing: 0.5px;
+}
+
+
+/* Menu links */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.main-nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    transition: all 0.2s;
+}
+
+.main-nav a:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+/* Centreret Indhold */
+.page-content {
+    max-width: 1200px; 
+    margin: 30px auto; 
+    padding: 0 20px;
+}
+
+/* Mobil-tilpasning for menuen */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
