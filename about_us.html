@@ -1,21 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple HTML Page</title>
+    <title>Om Os - EV Route Planner</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>We are a team of developers passionate about creating amazing web experiences.</p>
-    <p>We believe in the power of technology to transform businesses and improve lives.</p>
-    <p>Our mission is to deliver high-quality, user-friendly websites that meet our clients' needs.</p>
-    <p>Feel free to explore our projects and get in touch with us for any inquiries!</p>
-    <p>Thank you for visiting our website!</p>
 
-    <p>Projektet er udarbejdet i forbindelse med M6 på IT-Ledelse.
-       Konceptet er en website, hvor man kan planlægge sine ladestop i forbindelse med sin rejse i elbil. 
-    </p>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-brand">
+                <a href="index.html" class="site-logo">
+                    <img src="logo.png" alt="EV Roadtrip Logo">
+                </a>
+                <h1 class="site-title">EV Route Planner</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="about_us.html">Om Os</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        
+        <div class="about-container">
+            
+            <section class="about-project panel">
+                <h2>Om Projektet</h2>
+                <p>
+                    Velkommen til EV Route Planner! 
+                </p>
+                <p>
+                    Vi startede dette projekt i forbindelse med eksamensopgaven i M6 på 2. semester af IT-Ledelse på Aalborg Universitet. 
+                    Idéen udsprang af, at vi oplevede, hvor frustrerende det kan være at planlægge længere køreture i en elbil. Vores 
+                    mission er at gøre ruteplanlægning intelligent, gennemskuelig og stressfri.
+                </p>
+                <p>
+                    Ved hjælp af live-data fra OpenChargeMap og avanceret ruteberegning fjerner 
+                    vi "rækkeviddeangsten" og lader dig fokusere på selve rejsen.
+                </p>
+            </section>
+
+            <section class="about-team">
+                <h2>Mød Holdet Bag</h2>
+                
+                <div class="team-grid">
+                    <div class="team-member panel">
+                        <div class="member-photo">
+                            <img src="AustinPowers.webp" alt="Foto af Christian Strøm">
+                        </div>
+                        <h3>Christian Strøm</h3>
+                        <p class="member-role">Medstifter & Alt-mulig-mand</p>
+                        <p>
+                            Christian læser IT-Ledelse på Aalborg Universitet og har en passion for at binde teknologi og forretning sammen. I dette projekt har fokus været på at skabe en løsning, der rent faktisk løser et hverdagsproblem for elbilister.
+                        </p>
+                    </div>
+
+                    <div class="team-member panel">
+                        <div class="member-photo">
+                            <img src="MortenSkildpadde.jpg" alt="Foto af Morten Nielsen">
+                        </div>
+                        <h3>Morten Nielsen</h3>
+                        <p class="member-role">Medstifter & Alt-mulig-mand</p>
+                        <p>
+                            Morten er ligeledes studerende på IT-Ledelse ved AAU. Med en skarp interesse for brugeroplevelser og systemudvikling, har motivationen været at bygge et system, der er både pålideligt og nemt at bruge for slutbrugeren.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="about-cta">
+                <p>Har du spørgsmål, eller vil du samarbejde med os?</p>
+                <a href="contact.html" class="cta-button">Gå til Kontakt</a>
+            </section>
+            
+        </div>
+
+    </main>
+
 </body>
 </html>
