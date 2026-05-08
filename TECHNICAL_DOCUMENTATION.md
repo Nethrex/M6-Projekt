@@ -44,6 +44,7 @@ Hovedlogikken findes i funktionen `findRoute()`. Algoritmen håndterer to primæ
 2. **Automatisk beregning (0 stop):** Simulerer bilens strømforbrug undervejs. Når batteriet når en kritisk grænse (20%), finder algoritmen den nærmeste ladestander via OpenChargeMap, "lader" bilen op til 80%, og fortsætter derefter turen.
 
 ---
+
 ## 4. Systemflow (UML Sekvensdiagram)
 For at visualisere interaktionen mellem brugeren, systemets frontend og de forskellige tredjeparts-API'er, har vi udarbejdet et UML-sekvensdiagram. Diagrammet illustrerer den præcise rækkefølge af de asynkrone kald, der foretages, når en bruger anmoder om en ruteberegning.
 
@@ -76,6 +77,7 @@ sequenceDiagram
     Note over Frontend: 4. Brugerflade
     Frontend->>Frontend: Tegner rute og markører på Leaflet-kort ladestop efter ladestop
     Frontend-->>Bruger: Viser det færdige kort med rute og alle ladestop
+```
 
 ---
 
