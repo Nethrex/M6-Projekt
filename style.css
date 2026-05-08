@@ -347,3 +347,24 @@ body {
     color: #334155;
     font-size: 18px;
 }
+
+/* =========================================
+   FOOTER (Global)
+   ========================================= */
+.site-footer {
+    background-color: #1e293b; /* Samme mørke farve som titlen */
+    color: #94a3b8; /* Diskret grå tekst */
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px; /* Sikrer luft mellem indholdet og footeren */
+}
+
+.site-footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.site-footer p:first-child {
+    color: #e2e8f0; /* Gør den øverste linje lidt lysere */
+    font-weight: 500;
+}
