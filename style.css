@@ -34,8 +34,8 @@ body {
 
 /* Styrer selve billedets størrelse */
 .site-logo img {
-    max-height: 50px; /* Sørger for at logoet ikke sprænger menuens højde */
-    width: auto;      /* Bevarer billedets proportioner */
+    max-height: 50px; 
+    width: auto;      
     display: block;
 }
 
@@ -43,7 +43,7 @@ body {
 .site-brand {
     display: flex;
     align-items: center;
-    gap: 20px; /* Bestemmer afstanden mellem logoet og titlen */
+    gap: 20px; 
 }
 
 /* Styling af selve titlen */
@@ -51,7 +51,7 @@ body {
     margin: 0;
     font-size: 26px;
     font-weight: bold;
-    color: #1e293b; /* En mørk, pæn overskriftsfarve */
+    color: #1e293b; 
     letter-spacing: 0.5px;
 }
 
@@ -80,15 +80,33 @@ body {
     color: #0ea5e9;
 }
 
-/* Mobil-tilpasning for menuen */
+/* Mobil-tilpasning for topbar og menu */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
+    
+    .site-brand {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
     .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+
+    .main-nav a {
+        display: block;
+        text-align: center;
+        padding: 12px 10px; 
     }
 }
 
@@ -143,7 +161,7 @@ body {
     color: #475569;
     font-size: 16px;
     margin-bottom: 15px;
-    text-align: center; /* Teksten er centreret */
+    text-align: center; 
 }
 
 .about-project p:last-child {
@@ -246,7 +264,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 800px; /* Holder siden smal og pæn */
+    max-width: 800px; 
     margin: 0 auto;
 }
 
@@ -307,7 +325,7 @@ body {
 
 @media (max-width: 600px) {
     .team-emails {
-        grid-template-columns: 1fr; /* Stabler mail-boksene på telefoner */
+        grid-template-columns: 1fr; 
     }
 }
 
@@ -319,7 +337,7 @@ body {
 
 /* Joke Sektion */
 .fun-fact {
-    background-color: #f0f9ff; /* Giver boksen en super svag lyseblå farve */
+    background-color: #f0f9ff; 
     border: 1px solid #bae6fd;
     text-align: center;
 }
