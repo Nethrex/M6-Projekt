@@ -1,16 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple HTML Page</title>
+    <title>Kontakt - EV Route Planner</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Contact Us</h1>
-    <p>If you have any questions or would like to get in touch, please feel free to reach out!</p>
-    <ul>
-        <li>Email: xyz@mail.com</li>
-    </ul>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-brand">
+                <a href="index.html" class="site-logo">
+                    <img src="logo.png" alt="EV Roadtrip Logo">
+                </a>
+                <h1 class="site-title">EV Route Planner</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="about_us.html">Om Os</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        
+        <div class="contact-container">
+            
+            <section class="panel contact-intro">
+                <h2>Kontakt Os</h2>
+                <p>Har du spørgsmål, ris, ros eller fandt du en bug i ruteplanlæggeren? Tøv endelig (ikke) med at skrive til vores fælles postkasse!</p>
+                <div class="main-email-box">
+                    <h3>Fælles indbakke</h3>
+                    <a href="mailto:pleasedontcontactus@email.com" class="email-link">pleasedontcontactus@email.com</a>
+                </div>
+            </section>
+
+            <section class="panel contact-team">
+                <h2>Skriv Direkte Til Os</h2>
+                <p>Hvis din henvendelse er specifik til en af os, kan du fange os her:</p>
+                
+                <div class="team-emails">
+                    <div class="team-email-box">
+                        <h3>Christian Strøm</h3>
+                        <a href="mailto:christian@evrouteplanner.dk" class="email-link">christian@evrouteplanner.dk</a>
+                    </div>
+                    <div class="team-email-box">
+                        <h3>Morten Nielsen</h3>
+                        <a href="mailto:morten@evrouteplanner.dk" class="email-link">morten@evrouteplanner.dk</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel fun-fact">
+                <h2>Dagens Elbil-Joke ⚡</h2>
+                <div class="joke-text">
+                    <p><strong>- Banke, banke på!</strong></p>
+                    <p><em>- Hvem der?</em></p>
+                    <p><strong>- Watt.</strong></p>
+                    <p><em>- Watt hvem?</em></p>
+                    <p><strong>- Watt sker der lige for, at vi skal lade igen?!</strong></p>
+                </div>
+            </section>
+            
+        </div>
+
+    </main>
+
 </body>
 </html>
