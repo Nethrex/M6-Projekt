@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To - EV Route Planner</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-brand">
+                <a href="index.html" class="site-logo">
+                    <img src="logo.png" alt="EV Roadtrip Logo">
+                </a>
+                <h1 class="site-title">EV Route Planner</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="how_to.html">How To</a></li>
+                    <li><a href="about_us.html">Om Os</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        
+        <div class="about-container">
+            
+            <section class="panel">
+                <h2 style="color: #1e293b; margin-top: 0;">Sådan bruger du beregneren</h2>
+                <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+                    Vores ruteplanlægger er bygget til at være så simpel som mulig. For at få den bedste rute, skal du blot udfylde de 5 felter på forsiden:
+                </p>
+                
+                <ul style="color: #475569; line-height: 1.8; font-size: 16px; margin-bottom: 20px;">
+                    <li><strong style="color: #1e293b;">Start & Destination:</strong> Indtast din afgangsadresse (eller by) og hvor du ønsker at køre hen.</li>
+                    <li><strong style="color: #1e293b;">Rækkevidde (km):</strong> Her taster du bilens maksimale rækkevidde ved 100% opladning (f.eks. 400 km). Dette afhænger af din bilmodel.</li>
+                    <li><strong style="color: #1e293b;">Batteri (%):</strong> Angiv, hvor meget strøm du har på bilen, når du starter turen. Hvis du starter med 30%, vil systemet automatisk finde en lader meget tidligt på ruten.</li>
+                    <li><strong style="color: #1e293b;">Tving antal stop:</strong> Som standard regner systemet selv ud, hvor mange stop du har brug for (<em>sæt til 0</em>). Men hvis du f.eks. har børn med og VIL holde 3 pauser uanset hvad, kan du taste '3' her. Så fordeler systemet ladestoppene jævnt på ruten.</li>
+                </ul>
+            </section>
+
+            <section class="panel">
+                <h2 style="color: #1e293b; margin-top: 0;">Hvordan virker det bag kulisserne?</h2>
+                <p style="color: #475569; font-size: 16px; line-height: 1.6;">
+                    For at give dig en pålidelig rute, trækker platformen på live-data fra flere forskellige systemer (API'er) i det øjeblik, du trykker "Beregn".
+                </p>
+
+                <div style="margin-top: 25px;">
+                    <h3 style="margin-top: 0; color: #43ba0c;">1. Ruteberegning (OSRM)</h3>
+                    <p style="color: #334155; margin-bottom: 0; line-height: 1.6;">
+                        Først sender vi dine start- og slutkoordinater til <strong style="color: #1e293b;">Open Source Routing Machine (OSRM)</strong>. Dette API returnerer den hurtigste kørerute og den totale distance, som vi derefter tegner op på det interaktive kort.
+                    </p>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <h3 style="margin-top: 0; color: #43ba0c;">2. Live Ladestandere (OpenChargeMap API)</h3>
+                    <p style="color: #334155; margin-bottom: 0; line-height: 1.6;">
+                        Når vi har ruten, simulerer vi bilens strømforbrug. Når batteriet nærmer sig 20%, "pauser" vi ruten og spørger <strong style="color: #1e293b;">OpenChargeMap API'et</strong> om den nærmeste ladestander.<br><br>
+                        <em>Smart filter:</em> Vi har programmeret systemet til primært at lede efter <strong style="color: #1e293b;">Hurtigladere (50+ kW)</strong> langs motorvejsnettet, så du ikke bliver dirigeret ind til en langsom 11 kW-lader midt i en lille landsby.
+                    </p>
+                </div>
+            </section>
+            
+        </div>
+
+    </main>
+
+</body>
+</html>
