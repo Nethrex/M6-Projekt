@@ -99,9 +99,14 @@ Projektet er opdelt for at sikre overskuelighed og muliggøre parallelt arbejde 
 ## 6. Setup Guide / Installation
 For at sikre, at JavaScript `fetch()`-kald til eksterne API'er ikke blokeres af browserens CORS-sikkerhedspolitikker, skal systemet afvikles via en lokal webserver frem for at åbne filerne direkte via `file://` protokollen.
 
+### Afhængigheder og Systemkrav
+For at systemet kan afvikles korrekt, kræves følgende:
+* **Python 3.x:** Bruges udelukkende som værktøj til at køre en lokal webserver-instans. Dette er nødvendigt for at tildele applikationen et gyldigt "Origin" (`http://localhost`), så browserens CORS-sikkerhedsregler tillader kommunikation med eksterne API'er.
+* **Internetforbindelse:** Nødvendig for at kunne fetche data fra OSRM, Nominatim og OpenChargeMap, da systemet er bygget på en distribueret arkitektur uden lokal database.
+
 **Sådan køres systemet:**
 1. Klon repository'et fra GitHub: 
-   `git clone [jeres-github-url]`
+   `git clone https://github.com/Nethrex/M6-Projekt/tree/main`
 2. Åbn en terminal i projektmappen.
 3. Start en lokal webserver via Python ved at køre følgende kommando:
    `python3 -m http.server 8000`
