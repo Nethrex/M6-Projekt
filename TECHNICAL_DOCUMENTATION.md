@@ -5,14 +5,14 @@ Dette dokument beskriver den tekniske arkitektur, filstruktur og de eksterne int
 ---
 
 ## 1. Systemarkitektur
-Systemet er bygget som en **Client-side/Frontend webapplikation**. Vi har valgt en statisk arkitektur, hvilket betyder, at systemet ikke har sin egen server eller database (backend). I stedet afvikles al forretningslogik direkte i brugerens browser via Vanilla JavaScript. 
+Systemet er bygget som en **Client-side/Frontend webapplikation**. Vi har valgt en arkitektur, hvor systemet ikke har sin egen server eller database (backend) i denne MVP version. I stedet afvikles logikken direkte i brugerens browser via JavaScript. 
 
-Denne arkitektur er valgt for at holde systemet letvægtigt, hurtigt og uafhængigt af komplekse server-opsætninger. Systemets data- og beregningsbehov dækkes ved at integrere med eksterne REST API'er (Microservices-lignende tilgang).
+Denne arkitektur er valgt for at holde systemet simpelt og uafhængigt af server- og databaseopsætninger. Systemets data og beregninger foregår via integrationer med API'er.
 
 **Teknologier:**
 * **Struktur:** HTML5
-* **Styling:** CSS3 (Custom grids og flexbox)
-* **Logik:** Vanilla JavaScript (ES6+ med asynkrone funktioner / `async/await`)
+* **Styling:** CSS3
+* **Logik:** JavaScript
 
 ---
 
@@ -45,7 +45,7 @@ Hovedlogikken findes i funktionen `findRoute()`. Algoritmen håndterer to primæ
 
 ---
 
-## 4. Systemflow (UML Sekvensdiagram)
+## 4. Systemflow (Sekvensdiagram)
 For at visualisere interaktionen mellem brugeren, systemets frontend og de forskellige tredjeparts-API'er, har vi udarbejdet et UML-sekvensdiagram. Diagrammet illustrerer den præcise rækkefølge af de asynkrone kald, der foretages, når en bruger anmoder om en ruteberegning.
 
 Diagrammet er udarbejdet i low-code værktøjet **mermaid.live**, hvilket gør det muligt at indlejre diagrammet direkte som kode i Markdown-dokumentationen og derved sikre at det kommunikeres samlet.
@@ -81,10 +81,10 @@ sequenceDiagram
 
 ---
 
-## 5. Programmets-flow (UML Aktivitetsdiagram)
-Hvor sekvensdiagrammet kortlægger den eksterne kommunikation med tredjepartstjenester (Nominatim til koordinater, OSRM til vores polyline og OCM til ladestandere), så zoomer dette UML-aktivitetsdiagram helt ind på den interne programlogik, vores if/else-logik, samt håndteringen af nødstop i `findRoute()` funktionen. 
+## 5. Logikkens-flow (Aktivitetsdiagram)
+Hvor sekvensdiagrammet kortlægger den eksterne kommunikation med tredjepartstjenester (Nominatim til koordinater, OSRM til vores polyline og OCM til ladestandere), så zoomer dette UML-aktivitetsdiagram helt ind på den interne programlogik, vores if/else-logik, samt håndteringen af manuelle stop i `findRoute()` funktionen. 
 
-Diagrammet afspejler vores systematiske sikring af systemets ikke-funktionelle krav om stabilitet og robusthed over for edge-cases. Det er ligeledes indlejret direkte via Mermaid-syntaks:
+Diagrammet afspejler vores systematiske sikring af systemets ikke-funktionelle krav om stabilitet og robusthed over for edge-cases (start batteri under 20%). Det er ligeledes indlejret direkte via Mermaid-syntaks:
 
 ```mermaid
 ---
@@ -176,11 +176,10 @@ Projektet er opdelt for at sikre overskuelighed og muliggøre parallelt arbejde 
 ---
 
 ## 7. Setup Guide / Installation
-For at sikre, at JavaScript `fetch()`-kald til eksterne API'er ikke blokeres af browserens CORS-sikkerhedspolitikker, skal systemet afvikles via en lokal webserver frem for at åbne filerne direkte via `file://` protokollen.
-
+For at sikre, at JavaScript `fetch()`-kald til eksterne API'er ikke blokeres af browserens CORS-sikkerhedspolitikker, skal systemet afvikles via en lokal webserver frem for at åbne filerne direkte ved at dobbelt-klikke på en HTML-fil.
 ### Afhængigheder og Systemkrav
 For at systemet kan afvikles korrekt, kræves følgende:
-* **Python 3.x:** Bruges udelukkende som værktøj til at køre en lokal webserver-instans. Dette er nødvendigt for at tildele applikationen et gyldigt "Origin" (`http://localhost`), så browserens CORS-sikkerhedsregler tillader kommunikation med eksterne API'er.
+* **Python 3:** Bruges udelukkende som værktøj til at køre en lokal webserver-instans. Dette er nødvendigt for at tildele applikationen et gyldigt "Origin" (`http://localhost`), så browserens CORS-sikkerhedsregler tillader kommunikation med eksterne API'er.
 * **Internetforbindelse:** Nødvendig for at kunne fetche data fra OSRM, Nominatim og OpenChargeMap, da systemet er bygget på en distribueret arkitektur uden lokal database.
 
 **Sådan køres systemet:**
@@ -190,4 +189,4 @@ For at systemet kan afvikles korrekt, kræves følgende:
 3. Start en lokal webserver via Python ved at køre følgende kommando:
    `python3 -m http.server 8000`
 4. Åbn din browser og gå til: `http://localhost:8000`
-5. Systemet er nu køreklar med fuld adgang til alle API-integrationer.
+5. Systemet er nu kørende med fuld adgang til alle API-integrationer.
